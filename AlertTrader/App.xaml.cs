@@ -13,5 +13,13 @@ namespace AlertTrader
     /// </summary>
     public partial class App : Application
     {
+        private void OnExit(object sender, ExitEventArgs e)
+        {
+          
+
+        }
     }
+
+   
+
 }

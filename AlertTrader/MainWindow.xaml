@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlertTrader"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="AlertTrader" Height="700" Width="800">
+
 
     <Grid>
+
+
         <Grid.RowDefinitions>
             <RowDefinition Height="38*"/>
             <RowDefinition Height="407*"/>
@@ -16,51 +19,107 @@
         <Button Content="Start timer" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="StartTimer_Click"/>
         <Button Content="Stop timer" HorizontalAlignment="Left" Margin="90,10,0,0" VerticalAlignment="Top" Width="75" Click="StopTimer_Click"/>
 
-        <DataGrid Name="gridBudgetList" AutoGenerateColumns="False" Grid.Row="1" Margin="0,4,376,0" Background="Black">
-            <DataGrid.Columns>
-
-                <DataGridTemplateColumn Width="Auto" Header="Date" CanUserSort="True" SortMemberPath="Date">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Date}" Margin="2" Foreground="DarkBlue" FontStyle="Italic" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <DataGridTemplateColumn Width="Auto" Header="Total Profit since beginning" CanUserSort="True" SortMemberPath="TotalProfit">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding TotalProfit}" Margin="2" Foreground="DarkBlue" FontStyle="Italic" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <DataGridTemplateColumn Width="Auto" Header="Total payed in Fees" CanUserSort="True" SortMemberPath="TotalPayedFee">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding TotalPayedFee}" Margin="2" Foreground="DarkBlue" FontStyle="Italic" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-            </DataGrid.Columns>
-
-        </DataGrid>
-        <ListBox Name="lbMessageList" Margin="421,29,0,0" Grid.Row="1" Background="Black" >
-            <ListBox.ItemTemplate>
-                <DataTemplate>
+        <TabControl Grid.Row="1" Grid.Column="1" Margin="10">
+            <TabItem>
+                <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Date}" Margin="0,0,3,0" Foreground="{Binding DisplayColor}"  />
-                        <TextBlock Text="{Binding DisplayInfo}" Foreground="{Binding DisplayColor}" />
+                        <!--<Image Source="/WpfTutorialSamples;component/Images/bullet_blue.png" />-->
+                        <TextBlock Text="Home" />
                     </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                </TabItem.Header>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="50*" />
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid Name="gridBudgetList" AutoGenerateColumns="False" Grid.Row="0" Grid.Column="0" Margin="5" Background="Black">
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn Width="Auto" Header="Date" CanUserSort="True" SortMemberPath="Date">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Date}" Margin="2" Foreground="DarkBlue" FontStyle="Italic" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Width="Auto" Header="Total Profit since beginning" CanUserSort="True" SortMemberPath="TotalProfit">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding TotalProfit}" Margin="2" Foreground="DarkBlue" FontStyle="Italic" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Width="Auto" Header="Total payed in Fees" CanUserSort="True" SortMemberPath="TotalPayedFee">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding TotalPayedFee}" Margin="2" Foreground="DarkBlue" FontStyle="Italic" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <ListBox Name="lbMessageList" Margin="5" Grid.Row="0" Grid.Column="1" Background="Black" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Date}" Margin="0,0,3,0" Foreground="{Binding DisplayColor}"  />
+                                    <TextBlock Text="{Binding DisplayInfo}" Foreground="{Binding DisplayColor}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/AlertTrader;component/Images/setting.png" Width="16" Margin="0,0,3,0"  />
+                        <TextBlock Text="Settings" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0"  >
+                        <Label Content="Email" Width="80" />
+                        <TextBox Name="settingEmail" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.email, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1"  >
+                        <Label Content="Password" Width="80" />
+                        <TextBox Name="settingPassword" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.password, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Timer (min)" Width="80" />
+                        <TextBox Name="settingTimer" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.timerMinutesToCheckEmail, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            
+        </TabControl>
+
+        
     </Grid>
 </Window>

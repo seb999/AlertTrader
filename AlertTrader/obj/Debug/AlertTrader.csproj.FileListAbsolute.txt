@@ -28,3 +28,5 @@ C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Bittrex.dll
 C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Newtonsoft.Json.dll
 C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Bittrex.pdb
 C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Newtonsoft.Json.xml
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\obj\Debug\App.baml

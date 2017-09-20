@@ -76,7 +76,7 @@ namespace AlertTrader
 
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
-            CheckEmailAlert();
+           CheckEmailAlert();
             budgetList.Add(new Budget() { Date = DateTime.Now, TotalProfit = totalProfit, TotalPayedFee = totalFees });
             //after 1 days we purge
             if (budgetList.Count > 60 * 24)
@@ -343,5 +343,17 @@ namespace AlertTrader
         }
 
         #endregion
+
+
+        private void Setting_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+       {
+            if (settingTimer == null) return;
+            if (settingTimer.Text == "") return;
+            Properties.Settings.Default.timerMinutesToCheckEmail = int.Parse(settingTimer.Text);
+            Properties.Settings.Default.email = settingEmail.Text;
+            Properties.Settings.Default.password = settingPassword.Text;
+            Properties.Settings.Default.Save();
+        }
+
     }
 }
