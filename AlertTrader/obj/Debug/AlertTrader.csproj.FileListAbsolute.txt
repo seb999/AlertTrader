@@ -30,3 +30,11 @@ C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Bittrex.pdb
 C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Newtonsoft.Json.xml
 C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\obj\Debug\App.baml
+C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader.csprojResolveAssemblyReference.cache
+C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\MainWindow.g.cs
+C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\App.g.cs
+C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader_MarkupCompile.cache
+C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader_MarkupCompile.lref
+C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader.exe
+C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader.pdb
