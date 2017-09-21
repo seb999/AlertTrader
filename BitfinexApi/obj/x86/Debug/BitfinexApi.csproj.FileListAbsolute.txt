@@ -1,0 +1,12 @@
+C:\Users\Julien\Documents\Visual Studio 2010\Projects\BitfinexApi\BitfinexApi\bin\Debug\BitfinexApi.pdb
+C:\Users\Julien\Documents\Visual Studio 2010\Projects\BitfinexApi\BitfinexApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Julien\Documents\Visual Studio 2010\Projects\BitfinexApi\BitfinexApi\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Julien\Documents\Visual Studio 2010\Projects\BitfinexApi\BitfinexApi\obj\x86\Debug\BitfinexApi.pdb
+C:\Users\Julien\Documents\Visual Studio 2010\Projects\BitfinexApi\BitfinexApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Julien\Documents\Visual Studio 2010\Projects\BitfinexApi\BitfinexApi\bin\Debug\BitfinexApi.dll
+C:\Users\Julien\Documents\Visual Studio 2010\Projects\BitfinexApi\BitfinexApi\obj\x86\Debug\BitfinexApi.dll
+C:\BitfinexAPI-master\BitfinexApi\bin\Debug\BitfinexApi.dll
+C:\BitfinexAPI-master\BitfinexApi\bin\Debug\BitfinexApi.pdb
+C:\BitfinexAPI-master\BitfinexApi\obj\x86\Debug\BitfinexApi.csprojResolveAssemblyReference.cache
+C:\BitfinexAPI-master\BitfinexApi\obj\x86\Debug\BitfinexApi.dll
+C:\BitfinexAPI-master\BitfinexApi\obj\x86\Debug\BitfinexApi.pdb

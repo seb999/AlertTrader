@@ -10,6 +10,7 @@ using AlertTrader.Classes;
 
 namespace AlertTrader.Misc
 {
+
     public static class helper
     {
         /// <summary>
