@@ -58,5 +58,8 @@ namespace AlertTrader.Properties {
                 this["password"] = value;
             }
         }
+
+        public string BitfinexApiKey { get; internal set; }
+        public string OneBrokerApiToken { get; internal set; }
     }
 }

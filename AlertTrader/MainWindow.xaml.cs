@@ -14,6 +14,7 @@ using System.Linq;
 using Newtonsoft.Json.Linq;
 using System.Globalization;
 using AlertTrader.Misc;
+using AlertTrader.APIExchanges;
 
 namespace AlertTrader
 {
@@ -27,8 +28,7 @@ namespace AlertTrader
         ObservableCollection<Information> messageList = new ObservableCollection<Information>();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
 
-        public static ExchangeContext context;
-        public static Exchange exchange;
+        public static  IAPIExchange exchange;
         public static string baseCurrency;
         public static string market;
 
@@ -61,7 +61,7 @@ namespace AlertTrader
             lbMessageList.ItemsSource = messageList;
             SetTimer();
         }
-
+        
         private void StopTimer_Click(object sender, RoutedEventArgs e)
         {
             dispatcherTimer.Stop();
@@ -90,10 +90,32 @@ namespace AlertTrader
             {
                 Alert alert = new Alert(message);
 
+                //EXCHANGE MANAGEMENT
+                switch(alert.exchange.ToLower())
+                {
+                    case "kraken":
+                        exchange = new KrakenExchange();
+                        break;
+                    case "bittrex":
+                        exchange = new BittrexExchange();
+                        break;
+                    case "bitfinex":
+                        exchange = new BitfinexExchange();
+                        break;
+                    case "poloniex":
+                        exchange = new PoloniexExchange();
+                        break;
+                    case "1broker":
+                        exchange = new OneBrokerExchange();
+                        break;
+                }
+
+
+                // ORDER MANAGEMENT
                 if (alert.orderType == "LONG" && !isLong)
                 {
                     isLong = true;
-                    lastBuyPrice = Buy();
+                    lastBuyPrice = Bu
                 }
                 else if (alert.orderType == "SHORT" && isLong)
                 {

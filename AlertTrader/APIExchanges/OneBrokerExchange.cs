@@ -11,9 +11,9 @@ namespace AlertTrader.APIExchanges
     {
         OneBrokerClient client;
 
-        public OneBrokerExchange(string apiToken)
+        public OneBrokerExchange()
         {
-            client = new OneBrokerClient(apiToken);
+            client = new OneBrokerClient(Properties.Settings.Default.OneBrokerApiToken);
             if (!client.IsApiTokenValid())
             {
                 throw new Exception("API token is not valid");
