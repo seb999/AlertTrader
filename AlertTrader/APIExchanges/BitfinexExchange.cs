@@ -16,33 +16,22 @@ namespace AlertTrader.APIExchanges
             api = new BitfinexApiV1(Properties.Settings.Default.BitfinexApiKey, Properties.Settings.Default.BitfinexApiSecret);
         }
 
-        public void CloseAllpositions()
-        {
-
-            throw new NotImplementedException();
-        }
-
-        public void GetBalance(string symbol)
+        public decimal GetBalance(string symbol)
         {
             throw new NotImplementedException();
         }
 
-        public decimal GetCurrentPrice()
+        public decimal GetCurrentPrice(string symbol)
         {
             throw new NotImplementedException();
         }
 
-        public void InitializeExchange()
+        public decimal Long()
         {
             throw new NotImplementedException();
         }
 
-        public bool Long()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Short()
+        public decimal Short()
         {
             throw new NotImplementedException();
         }

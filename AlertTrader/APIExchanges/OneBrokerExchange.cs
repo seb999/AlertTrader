@@ -29,40 +29,27 @@ namespace AlertTrader.APIExchanges
             }
         }
 
-        public void CloseAllpositions()
+        public decimal GetBalance(string symbol)
         {
             throw new NotImplementedException();
         }
 
-        public void GetBalance(string symbol)
-        {
-           
-        }
-
-        public decimal GetCurrentPrice()
+        public decimal GetCurrentPrice(string symbol)
         {
             throw new NotImplementedException();
         }
         
-        public void Long(string symbol, decimal ammountMargin, int leverage)
-        {
-            TradeDirection tradeDirection = TradeDirection.Long;
-            client.Orders.PostOrder(new Order(symbol, ammountMargin, tradeDirection, leverage, OrderType.Market));
-        }
-
-        public bool Long()
+        public decimal Long()
         {
             throw new NotImplementedException();
+            //TradeDirection tradeDirection = TradeDirection.Long;
+            //client.Orders.PostOrder(new Order(symbol, ammountMargin, tradeDirection, leverage, OrderType.Market));
         }
-
-        public void Short(string symbol, decimal ammountMargin, int leverage)
+        
+        public decimal Short()
         {
-            TradeDirection tradeDirection = TradeDirection.Short;
-            Order order = client.Orders.PostOrder(new Order(symbol, ammountMargin, tradeDirection, leverage, OrderType.Market));
-        }
-
-        public bool Short()
-        {
+            //TradeDirection tradeDirection = TradeDirection.Short;
+            //Order order = client.Orders.PostOrder(new Order(symbol, ammountMargin, tradeDirection, leverage, OrderType.Market));
             throw new NotImplementedException();
         }
     }

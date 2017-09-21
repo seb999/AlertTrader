@@ -61,5 +61,14 @@ namespace AlertTrader.Properties {
 
         public string BitfinexApiKey { get; internal set; }
         public string OneBrokerApiToken { get; internal set; }
+        public string BittrexApiKey { get; internal set; }
+        public string BittrexApiSecret { get; internal set; }
+        public string BitfinexApiSecret { get; internal set; }
+        public string BaseCurrency { get; internal set; }
+        public string Market { get; internal set; }
+        public bool UsingFixedAmmount { get; internal set; }
+        public object FixedAmmount { get; internal set; }
+        public decimal CapitalPercentageInEachOrder { get; internal set; }
+        public int LimitSpreadPercentage { get; internal set; }
     }
 }
