@@ -76,74 +76,49 @@ namespace AlertTrader
 
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
-           CheckEmailAlert();
-            budgetList.Add(new Budget() { Date = DateTime.Now, TotalProfit = totalProfit, TotalPayedFee = totalFees });
-            //after 1 days we purge
-            if (budgetList.Count > 60 * 24)
+            string message = EmailChecker.CheckEmailAlert();
+            helper.DisplayUserMessage(message, messageList, Brushes.Blue);
+
+            StringBuilder builder = new StringBuilder();
+
+            // order = LONG; exchange = KRAKEN; leverage = 2;
+            if (message.StartsWith("| "))
             {
-                budgetList.RemoveAt(0);
-                messageList.RemoveAt(0);
+                helper.DisplayUserMessage(message, messageList, Brushes.Blue);
             }
-        }
-
-        private void CheckEmailAlert()
-        {
-            using (Pop3Client client = new Pop3Client())
+            else
             {
-                client.Connect("pop-mail.outlook.com", 995, true);
-                client.Authenticate(Properties.Settings.Default.email, Properties.Settings.Default.password, AuthenticationMethod.UsernameAndPassword);
-                int count = client.GetMessageCount();
+                Alert alert = new Alert(message);
 
-                if (count == 0)
+                if (alert.orderType == "LONG" && !isLong)
                 {
-                    helper.DisplayUserMessage(string.Format("| No messages found on email {0}", Properties.Settings.Default.email), messageList, Brushes.Blue);
+                    isLong = true;
+                    lastBuyPrice = Buy();
                 }
-                else
+                else if (alert.orderType == "SHORT" && isLong)
                 {
-                    Message message = client.GetMessage(count);
-                    StringBuilder builder = new StringBuilder();
+                    decimal sellPrice = Sell();
 
-                    if (message.Headers.From.Address == "noreply@tradingview.com" && message.Headers.Subject.StartsWith("TradingView Alert"))
-                    {
-                        string subject = message.Headers.Subject;
+                    isLong = false;
+                    lastBuyPrice = 0;
+                }
+                else if (alert.orderType == "SHORT" && !isLong)
+                {
+                    helper.DisplayUserMessage(string.Format("| Found SHORT/SELL before having Long/Buy position opened. Deleting this signal message"), messageList, Brushes.Blue);
+                }
+                helper.DisplayUserMessage(string.Format("| Deleting signal message"), messageList, Brushes.Blue);
 
-                        string[] parts = subject.Split(new char[] { ':' });
-                        string action = parts[1];
+                //----------------------------------------------------------------------
 
-                        if (action.Contains("LONG"))
-                        {
-                            isLong = true;
-                            lastBuyPrice = Buy();
-
-                            client.DeleteMessage(1);
-                            helper.DisplayUserMessage(string.Format("| Deleting signal message"), messageList, Brushes.Blue);
-                        }
-                        else if (action.Contains("SHORT") && isLong)
-                        {
-                            decimal sellPrice = Sell();
-
-                            isLong = false;
-                            lastBuyPrice = 0;
-
-                            client.DeleteMessage(1);
-                            helper.DisplayUserMessage(string.Format("| Deleting signal message"), messageList, Brushes.Blue);
-                        }
-                        else if (action.Contains("SHORT") && !isLong)
-                        {
-                            client.DeleteMessage(1);
-                            helper.DisplayUserMessage(string.Format("| Found SHORT/SELL before having Long/Buy position opened. Deleting this signal message"), messageList, Brushes.Blue);
-                        }
-                    }
-                    else
-                    {
-                        client.DeleteMessage(1);
-                        helper.DisplayUserMessage(string.Format("| Found Non TradingView message: > {0}  > Deleting it !", message.Headers.Subject), messageList, Brushes.Blue);
-                    }
-                    client.Disconnect();
+                budgetList.Add(new Budget() { Date = DateTime.Now, TotalProfit = totalProfit, TotalPayedFee = totalFees });
+                //after 1 days we purge
+                if (budgetList.Count > 60 * 24)
+                {
+                    budgetList.RemoveAt(0);
+                    messageList.RemoveAt(0);
                 }
             }
         }
-
         #region Buy / Sell
 
         public decimal Buy()
