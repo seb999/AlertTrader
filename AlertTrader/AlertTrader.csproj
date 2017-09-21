@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>AlertTrader</RootNamespace>
     <AssemblyName>AlertTrader</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -75,6 +75,7 @@
     <Reference Include="MailKit, Version=1.18.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
       <HintPath>..\packages\MailKit.1.18.1.1\lib\net451\MailKit.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="MimeKit, Version=1.18.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
       <HintPath>..\packages\MimeKit.1.18.1\lib\net451\MimeKit.dll</HintPath>
     </Reference>
@@ -91,8 +92,6 @@
     </Reference>
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
@@ -112,10 +111,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="APIExchanges\APIExchange.cs" />
+    <Compile Include="APIExchanges\BitfinexExchange.cs" />
+    <Compile Include="APIExchanges\BittrexExchange.cs" />
+    <Compile Include="APIExchanges\Exchanges.cs" />
+    <Compile Include="APIExchanges\KrakenExchange.cs" />
+    <Compile Include="APIExchanges\OneBrokerExchange.cs" />
+    <Compile Include="APIExchanges\PoloniexExchange.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\EmailChecker.cs" />
+    <Compile Include="Classes\ExtensionAttribute.cs" />
     <Compile Include="Classes\Information.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -174,6 +182,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="bitcoin.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\1BrokerApi.Net-master\Source\1BrokerApi.Net\1BrokerApi.Net.csproj">
+      <Project>{77fa5502-f4cc-4be7-8e75-a0ea04e368c2}</Project>
+      <Name>1BrokerApi.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\arrivets-krakenapi-cff138b017c3\KrakenClient\KrakenClient.csproj">
+      <Project>{6fd7a9d6-ce6d-4b57-bebb-faaf2490811e}</Project>
+      <Name>KrakenClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BitfinexApi\BitfinexApi.csproj">
+      <Project>{6e7afcf2-068b-4385-aef5-0192defbd8d3}</Project>
+      <Name>BitfinexApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PoloniexApi.Net-master\PoloniexApi.Net\PoloniexApi.Net.csproj">
+      <Project>{bc5546fa-4f27-4a57-abe0-2691d1e8b51c}</Project>
+      <Name>PoloniexApi.Net</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
