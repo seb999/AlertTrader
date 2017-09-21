@@ -70,5 +70,6 @@ namespace AlertTrader.Properties {
         public object FixedAmmount { get; internal set; }
         public decimal CapitalPercentageInEachOrder { get; internal set; }
         public int LimitSpreadPercentage { get; internal set; }
+        public string Leverage { get; internal set; }
     }
 }

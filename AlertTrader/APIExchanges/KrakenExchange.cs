@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KrakenClient;
 
 namespace AlertTrader.APIExchanges
 {
     public class KrakenExchange : IAPIExchange
     {
-        public void CloseAllpositions()
-        {
-            throw new NotImplementedException();
-        }
+        KrakenClient.KrakenClient client;
 
+        public KrakenExchange()
+        {
+            client = new KrakenClient.KrakenClient();
+        }
+        
         public decimal GetBalance(string symbol)
         {
             throw new NotImplementedException();

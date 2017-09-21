@@ -20,37 +20,82 @@ namespace AlertTrader.APIExchanges
             }
         }
 
-        public void CloseAllPositions()
-        {
-            List<Position> openPositions = client.Positions.GetOpenPositions().ToList();
-            foreach(var pos in openPositions)
-            {
-                client.Positions.EditPosition(pos.Id);
-            }
-        }
-
         public decimal GetBalance(string symbol)
         {
-            throw new NotImplementedException();
+            return decimal.Parse(client.Account.GetAccountInfo().BalanceInBitcoins);
         }
 
         public decimal GetCurrentPrice(string symbol)
         {
-            throw new NotImplementedException();
+            string[] quotes = new string[1] { symbol };
+            return client.Markets.GetQuotes(quotes).First().MarketAsk;
         }
-        
+
         public decimal Long()
         {
-            throw new NotImplementedException();
-            //TradeDirection tradeDirection = TradeDirection.Long;
-            //client.Orders.PostOrder(new Order(symbol, ammountMargin, tradeDirection, leverage, OrderType.Market));
+            try
+            {
+                string baseCurrency = Properties.Settings.Default.BaseCurrency;
+                string market = Properties.Settings.Default.Market;
+                int leverage = int.Parse(Properties.Settings.Default.Leverage);
+
+                decimal balance = this.GetBalance(baseCurrency);
+                decimal price = this.GetCurrentPrice(market);
+
+                decimal ammountMargin;
+                if (Properties.Settings.Default.UsingFixedAmmount)
+                {
+                    ammountMargin = decimal.Parse(Properties.Settings.Default.FixedAmmount.ToString());
+                }
+                else
+                {
+                    ammountMargin = Properties.Settings.Default.CapitalPercentageInEachOrder * (balance / price);
+                }
+
+                TradeDirection tradeDirection = TradeDirection.Long;
+
+                client.Orders.PostOrder(new Order(market, ammountMargin, tradeDirection, leverage, OrderType.Market));
+
+                return price;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
         }
-        
+
         public decimal Short()
         {
-            //TradeDirection tradeDirection = TradeDirection.Short;
-            //Order order = client.Orders.PostOrder(new Order(symbol, ammountMargin, tradeDirection, leverage, OrderType.Market));
-            throw new NotImplementedException();
+            try
+            {
+                string baseCurrency = Properties.Settings.Default.BaseCurrency;
+                string market = Properties.Settings.Default.Market;
+                int leverage = int.Parse(Properties.Settings.Default.Leverage);
+
+                decimal balance = this.GetBalance(baseCurrency);
+                decimal price = this.GetCurrentPrice(market);
+
+                decimal ammountMargin;
+                if (Properties.Settings.Default.UsingFixedAmmount)
+                {
+                    ammountMargin = decimal.Parse(Properties.Settings.Default.FixedAmmount.ToString());
+                }
+                else
+                {
+                    ammountMargin = Properties.Settings.Default.CapitalPercentageInEachOrder * (balance / price);
+                }
+
+                TradeDirection tradeDirection = TradeDirection.Short;
+
+                client.Orders.PostOrder(new Order(market, ammountMargin, tradeDirection, leverage, OrderType.Market));
+
+                return price;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return 0;
         }
     }
 }
