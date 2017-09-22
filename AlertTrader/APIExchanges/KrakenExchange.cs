@@ -3,22 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KrakenClient;
 
 namespace AlertTrader.APIExchanges
 {
     public class KrakenExchange : IAPIExchange
     {
-        public void CloseAllpositions()
+        KrakenClient.KrakenClient client;
+
+        public KrakenExchange()
+        {
+            string ApiKey = Properties.Settings.Default.KrakenApiKey;
+            string ApiSecret = Properties.Settings.Default.KrakenApiSecret;
+            client = new KrakenClient.KrakenClient();
+        }
+        
+        public decimal GetBalance(string symbol)
         {
             throw new NotImplementedException();
         }
 
-        public void GetBalance(string symbol)
-        {
-            throw new NotImplementedException();
-        }
-
-        public decimal GetCurrentPrice()
+        public decimal GetCurrentPrice(string symbol)
         {
             throw new NotImplementedException();
         }
@@ -28,12 +33,12 @@ namespace AlertTrader.APIExchanges
             throw new NotImplementedException();
         }
 
-        public bool Long()
+        public decimal Long()
         {
             throw new NotImplementedException();
         }
 
-        public bool Short()
+        public decimal Short()
         {
             throw new NotImplementedException();
         }

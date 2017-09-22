@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AlertTrader.Classes;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +10,11 @@ namespace AlertTrader.APIExchanges
 {
     public interface IAPIExchange
     {
-        decimal GetCurrentPrice();
-        bool Long();
-        bool Short();
-        void CloseAllpositions();
-
-        void GetBalance(string symbol);
+        decimal GetCurrentPrice(string symbol);
+        decimal Long();
+        decimal Short();
+        decimal GetBalance(string symbol);
+        
     }
 
  

@@ -115,6 +115,70 @@
                         <Label Content="Timer (min)" Width="80" />
                         <TextBox Name="settingTimer" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.timerMinutesToCheckEmail, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
                     </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Base currency" Width="80" />
+                        <TextBox Name="txtBaseCurrency" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.BaseCurrency, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Market" Width="80" />
+                        <TextBox Name="txtMarket" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.Market, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Using Fixed Ammount" Width="80" />
+                        <CheckBox Name="chkUsingFixedAmmount" Height="23" IsChecked="{Binding Source={StaticResource Settings}, Path=Default.UsingFixedAmmount, Mode=TwoWay}" Width="120" Checked="Setting_CheckBoxChanged" Unchecked="Setting_CheckBoxChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Fixed Ammount" Width="80" />
+                        <TextBox Name="txtSettingFixedAmmount" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.FixedAmmount, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="CapitalPercentageInEachOrder" Width="80" />
+                        <TextBox Name="txtCapitalPercentageInEachOrder" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.CapitalPercentageInEachOrder, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="LimitSpreadPercentage" Width="80" />
+                        <TextBox Name="txtLimitSpreadPercentage" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.LimitSpreadPercentage, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Leverage" Width="80" />
+                        <TextBox Name="txtLeverage" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.Leverage, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Bitfinex Api Key" Width="80" />
+                        <TextBox Name="txtBitfinexApiKey" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.BitfinexApiKey, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Bitfinex Api Secret" Width="80" />
+                        <TextBox Name="txtBitfinexApiSecret" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.BitfinexApiSecret, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Bittrex Api Key" Width="80" />
+                        <TextBox Name="txtBittrexApiKey" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.BittrexApiKey, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Bittrex Api Secret" Width="80" />
+                        <TextBox Name="txtBittrexApiSecret" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.BittrexApiSecret, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Kraken Api Key" Width="80" />
+                        <TextBox Name="txtKrakenApiKey" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.KrakenApiKey, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Kraken Api Secret" Width="80" />
+                        <TextBox Name="txtKrakenApiSecret" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.KrakenApiSecret, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Poloniex Api Key" Width="80" />
+                        <TextBox Name="txtPoloniexApiKey" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.PoloniexApiKey, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="Poloniex Api Secret" Width="80" />
+                        <TextBox Name="txtPoloniexApiSecret" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.PoloniexApiSecret, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2"  >
+                        <Label Content="1Broker Api Token" Width="80" />
+                        <TextBox Name="txtOneBrokerApiToken" Height="23" Text="{Binding Source={StaticResource Settings}, Path=Default.OneBrokerApiToken, Mode=TwoWay}" Width="120" TextChanged="Setting_TextChanged" />
+                    </StackPanel>
                 </Grid>
             </TabItem>
             
