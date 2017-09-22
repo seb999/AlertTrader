@@ -71,5 +71,7 @@ namespace AlertTrader.Properties {
         public decimal CapitalPercentageInEachOrder { get; internal set; }
         public int LimitSpreadPercentage { get; internal set; }
         public string Leverage { get; internal set; }
+        public string PoloniexApiSecret { get; internal set; }
+        public string PoloniexApiKey { get; internal set; }
     }
 }
