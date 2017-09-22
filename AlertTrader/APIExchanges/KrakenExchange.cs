@@ -13,6 +13,8 @@ namespace AlertTrader.APIExchanges
 
         public KrakenExchange()
         {
+            string ApiKey = Properties.Settings.Default.KrakenApiKey;
+            string ApiSecret = Properties.Settings.Default.KrakenApiSecret;
             client = new KrakenClient.KrakenClient();
         }
         

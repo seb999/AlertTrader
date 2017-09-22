@@ -142,6 +142,11 @@ namespace AlertTrader
                 }
             }
         }
+        private void Setting_CheckBoxChanged(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.UsingFixedAmmount = chkUsingFixedAmmount.IsChecked.Value;
+            Properties.Settings.Default.Save();
+        }
 
         private void Setting_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
        {
@@ -150,6 +155,23 @@ namespace AlertTrader
             Properties.Settings.Default.timerMinutesToCheckEmail = int.Parse(settingTimer.Text);
             Properties.Settings.Default.email = settingEmail.Text;
             Properties.Settings.Default.password = settingPassword.Text;
+
+            Properties.Settings.Default.BaseCurrency = txtBaseCurrency.Text;
+            Properties.Settings.Default.Market = txtMarket.Text;
+            Properties.Settings.Default.CapitalPercentageInEachOrder = decimal.Parse(txtCapitalPercentageInEachOrder.Text);
+            Properties.Settings.Default.FixedAmmount = txtSettingFixedAmmount.Text;
+            Properties.Settings.Default.LimitSpreadPercentage =int.Parse(txtLimitSpreadPercentage.Text);
+            Properties.Settings.Default.Leverage = txtLeverage.Text;
+            Properties.Settings.Default.BittrexApiKey = txtBittrexApiKey.Text;
+            Properties.Settings.Default.BittrexApiSecret = txtBittrexApiSecret.Text;
+            Properties.Settings.Default.BitfinexApiKey = txtBitfinexApiKey.Text;
+            Properties.Settings.Default.BitfinexApiSecret = txtBitfinexApiSecret.Text;
+            Properties.Settings.Default.PoloniexApiKey = txtPoloniexApiKey.Text;
+            Properties.Settings.Default.PoloniexApiSecret = txtPoloniexApiSecret.Text;
+            Properties.Settings.Default.OneBrokerApiToken = txtOneBrokerApiToken.Text;
+            Properties.Settings.Default.KrakenApiKey = txtKrakenApiKey.Text;
+            Properties.Settings.Default.KrakenApiSecret = txtKrakenApiSecret.Text;
+
             Properties.Settings.Default.Save();
         }
 

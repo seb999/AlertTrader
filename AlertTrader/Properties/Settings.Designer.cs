@@ -73,5 +73,7 @@ namespace AlertTrader.Properties {
         public string Leverage { get; internal set; }
         public string PoloniexApiSecret { get; internal set; }
         public string PoloniexApiKey { get; internal set; }
+        public string KrakenApiKey { get; internal set; }
+        public string KrakenApiSecret { get; internal set; }
     }
 }

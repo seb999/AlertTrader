@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AlertTrader.exe" size="579512">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AlertTrader.exe" size="592824">
       <assemblyIdentity name="AlertTrader" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>e9NoGq6r8j1F4/sBj8Oqodzn2zyAlYlOgyHZmF5GavQ=</dsig:DigestValue>
+        <dsig:DigestValue>1bEkWPkZOpmpffhLiLjh56MhnFDoG06HZZLhrpiPoiA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -210,13 +210,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="AlertTrader.exe.config" size="2709">
+  <file name="AlertTrader.exe.config" size="3265">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Th7BYkf2rkr7Mx9CQcLRLZaTy7EfYFIsc0OGKlY57tI=</dsig:DigestValue>
+      <dsig:DigestValue>sA2z2735Bomi+Nuu59F2VtnzpcsSYhGQzj3CLfma8i0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="bitcoin.ico" size="179683">
