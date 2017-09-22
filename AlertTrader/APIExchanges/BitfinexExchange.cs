@@ -24,9 +24,9 @@ namespace AlertTrader.APIExchanges
             return balanceResponse.trading.balances[symbol.ToLower()];
         }
 
-        public decimal GetCurrentPrice(string symbol)
+        public decimal GetCurrentPrice(string baseCurrency, string market)
         {
-            TickerPairResponse ticker = api.GetTicker(symbol);
+            TickerPairResponse ticker = api.GetTicker(market);
             return ticker.last_price;
         }
 
@@ -44,7 +44,7 @@ namespace AlertTrader.APIExchanges
                 //-------------------------------
                 string pair = (market + baseCurrency).ToLower();
 
-                price = this.GetCurrentPrice(pair);
+                price = this.GetCurrentPrice(baseCurrency,market);
 
                 decimal ammount;
                 if (Properties.Settings.Default.UsingFixedAmmount)
@@ -148,7 +148,7 @@ namespace AlertTrader.APIExchanges
                 //-------------------------------
                 string pair = (market + baseCurrency).ToLower();
 
-                price = this.GetCurrentPrice(pair);
+                price = this.GetCurrentPrice(baseCurrency,market);
 
                 //Console.WriteLine("Price: " + price);
 

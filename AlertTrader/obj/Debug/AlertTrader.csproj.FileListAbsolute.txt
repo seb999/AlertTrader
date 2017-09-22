@@ -72,3 +72,4 @@ C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader.exe.manifes
 C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader.application
 C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader.exe
 C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader.pdb
+C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\bin\Debug\Jayrock.dll

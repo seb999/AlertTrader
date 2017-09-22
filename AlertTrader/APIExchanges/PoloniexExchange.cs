@@ -20,9 +20,9 @@ namespace AlertTrader.APIExchanges
         {
             return GetBalanceTask(symbol).Result;
         }
-        public decimal GetCurrentPrice(string symbol)
+        public decimal GetCurrentPrice(string baseCurrency, string market)
         {
-            return GetCurrentPriceTask(symbol).Result;
+            return GetCurrentPriceTask(market).Result;
         }
 
         public async Task<decimal> GetBalanceTask(string symbol)
@@ -57,7 +57,7 @@ namespace AlertTrader.APIExchanges
                 int leverage = int.Parse(Properties.Settings.Default.Leverage);
 
                 double balance = Convert.ToDouble(this.GetBalance("BTC"));
-                double price = Convert.ToDouble(this.GetCurrentPrice(market));
+                double price = Convert.ToDouble(this.GetCurrentPrice(baseCurrency,market));
 
                 double ammount;
                 if (Properties.Settings.Default.UsingFixedAmmount)
@@ -94,7 +94,7 @@ namespace AlertTrader.APIExchanges
                 int leverage = int.Parse(Properties.Settings.Default.Leverage);
 
                 double balance = Convert.ToDouble(this.GetBalance("BTC"));
-                double price = Convert.ToDouble(this.GetCurrentPrice(market));
+                double price = Convert.ToDouble(this.GetCurrentPrice(baseCurrency,market));
 
                 double ammount;
                 if (Properties.Settings.Default.UsingFixedAmmount)

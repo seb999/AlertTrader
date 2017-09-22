@@ -72,6 +72,12 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="Jayrock, Version=0.9.16530.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jayrock.0.9.16530.1\lib\net40\Jayrock.dll</HintPath>
+    </Reference>
+    <Reference Include="Jayrock.Json, Version=0.9.16530.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jayrock-json.0.9.16530\lib\net40\Jayrock.Json.dll</HintPath>
+    </Reference>
     <Reference Include="MailKit, Version=1.18.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
       <HintPath>..\packages\MailKit.1.18.1.1\lib\net451\MailKit.dll</HintPath>
     </Reference>
@@ -196,10 +202,6 @@
     <ProjectReference Include="..\BitfinexApi\BitfinexApi.csproj">
       <Project>{6e7afcf2-068b-4385-aef5-0192defbd8d3}</Project>
       <Name>BitfinexApi</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\poloniex.csharp-master\src\poloniex.api.s16\poloniex.api.s16.csproj">
-      <Project>{3aae4b82-d9e4-4851-b248-c3ebe810348f}</Project>
-      <Name>poloniex.api.s16</Name>
     </ProjectReference>
     <ProjectReference Include="..\PoloniexApi.Net-master\PoloniexApi.Net\PoloniexApi.Net.csproj">
       <Project>{bc5546fa-4f27-4a57-abe0-2691d1e8b51c}</Project>

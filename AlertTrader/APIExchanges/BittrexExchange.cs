@@ -232,9 +232,9 @@ namespace AlertTrader.APIExchanges
             return accountBalance.Available;
         }
 
-        public decimal GetCurrentPrice(string symbol)
+        public decimal GetCurrentPrice(string baseCurrency, string market)
         {
-            JObject ticker = exchange.GetTicker(symbol);
+            JObject ticker = exchange.GetTicker(market);
             return (decimal)ticker["Last"];
         }
 
