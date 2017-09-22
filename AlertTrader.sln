@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bittrex", "csharp-bittrex-a
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoloniexApi.Net", "PoloniexApi.Net-master\PoloniexApi.Net\PoloniexApi.Net.csproj", "{BC5546FA-4F27-4A57-ABE0-2691D1E8B51C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "poloniex.api.s16", "poloniex.csharp-master\src\poloniex.api.s16\poloniex.api.s16.csproj", "{3AAE4B82-D9E4-4851-B248-C3EBE810348F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,14 @@ Global
 		{BC5546FA-4F27-4A57-ABE0-2691D1E8B51C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC5546FA-4F27-4A57-ABE0-2691D1E8B51C}.Release|x86.ActiveCfg = Release|Any CPU
 		{BC5546FA-4F27-4A57-ABE0-2691D1E8B51C}.Release|x86.Build.0 = Release|Any CPU
+		{3AAE4B82-D9E4-4851-B248-C3EBE810348F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AAE4B82-D9E4-4851-B248-C3EBE810348F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AAE4B82-D9E4-4851-B248-C3EBE810348F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3AAE4B82-D9E4-4851-B248-C3EBE810348F}.Debug|x86.Build.0 = Debug|Any CPU
+		{3AAE4B82-D9E4-4851-B248-C3EBE810348F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AAE4B82-D9E4-4851-B248-C3EBE810348F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AAE4B82-D9E4-4851-B248-C3EBE810348F}.Release|x86.ActiveCfg = Release|Any CPU
+		{3AAE4B82-D9E4-4851-B248-C3EBE810348F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

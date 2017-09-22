@@ -25,9 +25,9 @@ namespace AlertTrader.APIExchanges
             return decimal.Parse(client.Account.GetAccountInfo().BalanceInBitcoins);
         }
 
-        public decimal GetCurrentPrice(string symbol)
+        public decimal GetCurrentPrice(string baseCurrency, string market)
         {
-            string[] quotes = new string[1] { symbol };
+            string[] quotes = new string[1] { market };
             return client.Markets.GetQuotes(quotes).First().MarketAsk;
         }
 
@@ -40,7 +40,7 @@ namespace AlertTrader.APIExchanges
                 int leverage = int.Parse(Properties.Settings.Default.Leverage);
 
                 decimal balance = this.GetBalance(baseCurrency);
-                decimal price = this.GetCurrentPrice(market);
+                decimal price = this.GetCurrentPrice(baseCurrency,market);
 
                 decimal ammountMargin;
                 if (Properties.Settings.Default.UsingFixedAmmount)
@@ -73,7 +73,7 @@ namespace AlertTrader.APIExchanges
                 int leverage = int.Parse(Properties.Settings.Default.Leverage);
 
                 decimal balance = this.GetBalance(baseCurrency);
-                decimal price = this.GetCurrentPrice(market);
+                decimal price = this.GetCurrentPrice(baseCurrency,market);
 
                 decimal ammountMargin;
                 if (Properties.Settings.Default.UsingFixedAmmount)

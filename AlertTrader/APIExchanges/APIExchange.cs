@@ -10,7 +10,7 @@ namespace AlertTrader.APIExchanges
 {
     public interface IAPIExchange
     {
-        decimal GetCurrentPrice(string symbol);
+        decimal GetCurrentPrice(string baseCurrency, string market);
         decimal Long();
         decimal Short();
         decimal GetBalance(string symbol);
