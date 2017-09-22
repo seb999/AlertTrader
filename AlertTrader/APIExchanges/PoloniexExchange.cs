@@ -1,16 +1,16 @@
-﻿using System;
+﻿using Jojatekok.PoloniexAPI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Jojatekok.PoloniexAPI;
 
 namespace AlertTrader.APIExchanges
 {
     public class PoloniexExchange : IAPIExchange
     {
         PoloniexClient client;
-        
+
         public PoloniexExchange()
         {
             client = new PoloniexClient(Properties.Settings.Default.PoloniexApiKey, Properties.Settings.Default.PoloniexApiSecret);
@@ -62,20 +62,20 @@ namespace AlertTrader.APIExchanges
                 double ammount;
                 if (Properties.Settings.Default.UsingFixedAmmount)
                 {
-                    ammount= double.Parse(Properties.Settings.Default.FixedAmmount.ToString());
+                    ammount = double.Parse(Properties.Settings.Default.FixedAmmount.ToString());
                 }
                 else
                 {
-                    ammount= Convert.ToDouble(Properties.Settings.Default.CapitalPercentageInEachOrder) * (balance / price);
+                    ammount = Convert.ToDouble(Properties.Settings.Default.CapitalPercentageInEachOrder) * (balance / price);
                 }
 
                 CurrencyPair pair = new CurrencyPair(baseCurrency, market);
                 double limitBuyPrice = Convert.ToDouble(price) * ((100 + Properties.Settings.Default.LimitSpreadPercentage) / 100);
 
-                int orderId = client.Trading.PostOrderAsync(pair, OrderType.Buy, ammount,limitBuyPrice).Id;
-                
+                int orderId = client.Trading.PostOrderAsync(pair, OrderType.Buy, ammount, limitBuyPrice).Id;
+
                 //===========================================================
-                
+
                 return Convert.ToDecimal(price);
             }
             catch (Exception ex)

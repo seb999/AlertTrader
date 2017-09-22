@@ -117,6 +117,7 @@
     <Compile Include="APIExchanges\KrakenExchange.cs" />
     <Compile Include="APIExchanges\OneBrokerExchange.cs" />
     <Compile Include="APIExchanges\PoloniexExchange.cs" />
+    <Compile Include="APIExchanges\PoloniexExchangeNew.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -195,6 +196,10 @@
     <ProjectReference Include="..\BitfinexApi\BitfinexApi.csproj">
       <Project>{6e7afcf2-068b-4385-aef5-0192defbd8d3}</Project>
       <Name>BitfinexApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\poloniex.csharp-master\src\poloniex.api.s16\poloniex.api.s16.csproj">
+      <Project>{3aae4b82-d9e4-4851-b248-c3ebe810348f}</Project>
+      <Name>poloniex.api.s16</Name>
     </ProjectReference>
     <ProjectReference Include="..\PoloniexApi.Net-master\PoloniexApi.Net\PoloniexApi.Net.csproj">
       <Project>{bc5546fa-4f27-4a57-abe0-2691d1e8b51c}</Project>
