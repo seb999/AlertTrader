@@ -150,8 +150,24 @@ namespace AlertTrader
 
         private void Setting_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
        {
-            if (settingTimer == null) return;
-            if (settingTimer.Text == "") return;
+            if (settingTimer == null || settingEmail == null || settingPassword == null || txtBaseCurrency == null
+                || txtMarket == null || txtCapitalPercentageInEachOrder == null || chkUsingFixedAmmount == null
+                || txtSettingFixedAmmount == null || txtLimitSpreadPercentage == null || txtLeverage == null
+                || txtBittrexApiKey == null  || txtBittrexApiSecret == null || txtBitfinexApiKey == null || txtBitfinexApiSecret == null
+                || txtPoloniexApiKey == null || txtPoloniexApiSecret == null || txtKrakenApiKey == null || txtKrakenApiSecret == null
+                || txtOneBrokerApiToken == null)
+            {
+                return;
+            }
+            if (settingTimer.Text == "" || settingEmail.Text == "" || settingPassword.Text == "" || txtBaseCurrency.Text == "" 
+                || txtMarket.Text == "" || txtCapitalPercentageInEachOrder.Text == "" || txtSettingFixedAmmount.Text == "" 
+                || txtLimitSpreadPercentage.Text == "" || txtLeverage.Text == "" || txtBitfinexApiKey.Text == "" || txtBitfinexApiSecret.Text == ""
+                || txtBitfinexApiKey.Text == "" || txtBitfinexApiSecret.Text == "" || txtPoloniexApiKey.Text == "" || txtPoloniexApiSecret.Text == "" 
+                || txtKrakenApiKey.Text == "" || txtKrakenApiSecret.Text == "" || txtOneBrokerApiToken.Text == "" )
+            {
+                return;
+            }
+
             Properties.Settings.Default.timerMinutesToCheckEmail = int.Parse(settingTimer.Text);
             Properties.Settings.Default.email = settingEmail.Text;
             Properties.Settings.Default.password = settingPassword.Text;
