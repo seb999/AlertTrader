@@ -7,7 +7,7 @@ using System.Windows.Media;
 
 namespace AlertTrader.Classes
 {
-    internal class Information
+    public class Information
     {
         public DateTime Date { get; set; }
         public string DisplayInfo { get; set; }

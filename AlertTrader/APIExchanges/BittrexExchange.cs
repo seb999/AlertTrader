@@ -13,15 +13,14 @@ using AlertTrader.Classes;
 
 namespace AlertTrader.APIExchanges
 {
-    public class BittrexExchange : IAPIExchange
+    public class BittrexExchange : APIExchange
     {
         Exchange exchange;
-        ObservableCollection<Information> messageList = new ObservableCollection<Information>();
         decimal totalFees = 0;
         decimal lastBuyPrice = 0;
         decimal totalProfit = 0;
 
-        public BittrexExchange()
+        public BittrexExchange(ObservableCollection<Information> list) : base(list)
         {
             exchange = new Exchange();
             exchange.Initialise(new ExchangeContext()
