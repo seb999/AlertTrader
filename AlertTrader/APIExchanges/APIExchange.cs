@@ -15,7 +15,7 @@ namespace AlertTrader.APIExchanges
         public APIExchange(ObservableCollection<Information> list)
         {
             messageList = list;
-        }
+        }   
 
         decimal GetCurrentPrice(string baseCurrency, string market) { return 0; }
         decimal Long() { return 0; }
