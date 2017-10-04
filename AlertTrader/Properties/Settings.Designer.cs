@@ -12,7 +12,7 @@ namespace AlertTrader.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.0.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -37,7 +37,7 @@ namespace AlertTrader.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("toto@titi.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
         public string email {
             get {
                 return ((string)(this["email"]));
@@ -49,7 +49,7 @@ namespace AlertTrader.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Bonjour")]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
         public string password {
             get {
                 return ((string)(this["password"]));
@@ -58,22 +58,197 @@ namespace AlertTrader.Properties {
                 this["password"] = value;
             }
         }
-
-        public string BitfinexApiKey { get; internal set; }
-        public string OneBrokerApiToken { get; internal set; }
-        public string BittrexApiKey { get; internal set; }
-        public string BittrexApiSecret { get; internal set; }
-        public string BitfinexApiSecret { get; internal set; }
-        public string BaseCurrency { get; internal set; }
-        public string Market { get; internal set; }
-        public bool UsingFixedAmmount { get; internal set; }
-        public object FixedAmmount { get; internal set; }
-        public decimal CapitalPercentageInEachOrder { get; internal set; }
-        public int LimitSpreadPercentage { get; internal set; }
-        public string Leverage { get; internal set; }
-        public string PoloniexApiSecret { get; internal set; }
-        public string PoloniexApiKey { get; internal set; }
-        public string KrakenApiKey { get; internal set; }
-        public string KrakenApiSecret { get; internal set; }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string BaseCurrency {
+            get {
+                return ((string)(this["BaseCurrency"]));
+            }
+            set {
+                this["BaseCurrency"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string Market {
+            get {
+                return ((string)(this["Market"]));
+            }
+            set {
+                this["Market"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UsingFixedAmount {
+            get {
+                return ((bool)(this["UsingFixedAmount"]));
+            }
+            set {
+                this["UsingFixedAmount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string FixedAmmount {
+            get {
+                return ((string)(this["FixedAmmount"]));
+            }
+            set {
+                this["FixedAmmount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal CapitalPercentageInEachOrder {
+            get {
+                return ((decimal)(this["CapitalPercentageInEachOrder"]));
+            }
+            set {
+                this["CapitalPercentageInEachOrder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int LimitSpreadPercentage {
+            get {
+                return ((int)(this["LimitSpreadPercentage"]));
+            }
+            set {
+                this["LimitSpreadPercentage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public string Leverage {
+            get {
+                return ((string)(this["Leverage"]));
+            }
+            set {
+                this["Leverage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string BitfinexApiKey {
+            get {
+                return ((string)(this["BitfinexApiKey"]));
+            }
+            set {
+                this["BitfinexApiKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string BitfinexApiSecret {
+            get {
+                return ((string)(this["BitfinexApiSecret"]));
+            }
+            set {
+                this["BitfinexApiSecret"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string BittrexApiKey {
+            get {
+                return ((string)(this["BittrexApiKey"]));
+            }
+            set {
+                this["BittrexApiKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string BittrexApiSecret {
+            get {
+                return ((string)(this["BittrexApiSecret"]));
+            }
+            set {
+                this["BittrexApiSecret"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string PoloniexApiKey {
+            get {
+                return ((string)(this["PoloniexApiKey"]));
+            }
+            set {
+                this["PoloniexApiKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string PoloniexApiSecret {
+            get {
+                return ((string)(this["PoloniexApiSecret"]));
+            }
+            set {
+                this["PoloniexApiSecret"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string KrakenApiKey {
+            get {
+                return ((string)(this["KrakenApiKey"]));
+            }
+            set {
+                this["KrakenApiKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string KrakenApiSecret {
+            get {
+                return ((string)(this["KrakenApiSecret"]));
+            }
+            set {
+                this["KrakenApiSecret"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string OneBrokerApiToken {
+            get {
+                return ((string)(this["OneBrokerApiToken"]));
+            }
+            set {
+                this["OneBrokerApiToken"] = value;
+            }
+        }
     }
 }

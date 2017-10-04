@@ -2,19 +2,13 @@
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Threading;
-//using MailKit.Net.Pop3;
-using OpenPop.Pop3;
 using AlertTrader.Classes;
-using OpenPop.Mime;
 using System.Text;
 using System.Windows.Media;
-using System.Media;
-using Bittrex;
-using System.Linq;
-using Newtonsoft.Json.Linq;
-using System.Globalization;
 using AlertTrader.Misc;
 using AlertTrader.APIExchanges;
+using static AlertTrader.Classes.LookupData;
+using AlertTrader.IAPIExchanges;
 
 namespace AlertTrader
 {
@@ -25,10 +19,12 @@ namespace AlertTrader
     {
 
         ObservableCollection<Budget> budgetList = new ObservableCollection<Budget>();
-        ObservableCollection<Information> messageList = new ObservableCollection<Information>();
+        //ObservableCollection<Information> messageList = new ObservableCollection<Information>();
+        ObservableCollection<Information> messageList = LookupData.MessageList;
+
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
 
-        public static  IAPIExchange exchange;
+        public static IAPIExchange exchange;
         public static string baseCurrency;
         public static string market;
 
@@ -58,7 +54,7 @@ namespace AlertTrader
         private void StartTimer_Click(object sender, RoutedEventArgs e)
         {
             gridBudgetList.ItemsSource = budgetList;
-            lbMessageList.ItemsSource = messageList;
+            lbMessageList.ItemsSource = LookupData.MessageList;//messageList;
             SetTimer();
         }
         
@@ -77,14 +73,14 @@ namespace AlertTrader
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
             string message = EmailChecker.CheckEmailAlert();
-            helper.DisplayUserMessage(message, messageList, Brushes.Blue);
+            helper.DisplayUserMessage(message, LookupData.MessageList, Brushes.Blue);
 
             StringBuilder builder = new StringBuilder();
 
             // order = LONG; exchange = KRAKEN; leverage = 2;
             if (message.StartsWith("| "))
             {
-                helper.DisplayUserMessage(message, messageList, Brushes.Blue);
+                helper.DisplayUserMessage(message, LookupData.MessageList, Brushes.Blue);
             }
             else
             {
@@ -97,7 +93,7 @@ namespace AlertTrader
                         exchange = new KrakenExchange();
                         break;
                     case "bittrex":
-                        exchange = new BittrexExchange();
+                       // exchange = new BittrexExchange();
                         break;
                     case "bitfinex":
                         exchange = new BitfinexExchange();
@@ -144,26 +140,26 @@ namespace AlertTrader
         }
         private void Setting_CheckBoxChanged(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.UsingFixedAmmount = chkUsingFixedAmmount.IsChecked.Value;
+            Properties.Settings.Default.UsingFixedAmount = chkUsingFixedAmount.IsChecked.Value;
             Properties.Settings.Default.Save();
         }
 
         private void Setting_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
        {
             if (settingTimer == null || settingEmail == null || settingPassword == null || txtBaseCurrency == null
-                || txtMarket == null || txtCapitalPercentageInEachOrder == null || chkUsingFixedAmmount == null
+                || txtMarket == null || txtCapitalPercentageInEachOrder == null || chkUsingFixedAmount == null
                 || txtSettingFixedAmmount == null || txtLimitSpreadPercentage == null || txtLeverage == null
-                || txtBittrexApiKey == null  || txtBittrexApiSecret == null || txtBitfinexApiKey == null || txtBitfinexApiSecret == null
+                || txtBittrexApiKey == null || txtBittrexApiSecret == null || txtBitfinexApiKey == null || txtBitfinexApiSecret == null
                 || txtPoloniexApiKey == null || txtPoloniexApiSecret == null || txtKrakenApiKey == null || txtKrakenApiSecret == null
                 || txtOneBrokerApiToken == null)
             {
                 return;
             }
-            if (settingTimer.Text == "" || settingEmail.Text == "" || settingPassword.Text == "" || txtBaseCurrency.Text == "" 
-                || txtMarket.Text == "" || txtCapitalPercentageInEachOrder.Text == "" || txtSettingFixedAmmount.Text == "" 
+            if (settingTimer.Text == "" || settingEmail.Text == "" || settingPassword.Text == "" || txtBaseCurrency.Text == ""
+                || txtMarket.Text == "" || txtCapitalPercentageInEachOrder.Text == "" || txtSettingFixedAmmount.Text == ""
                 || txtLimitSpreadPercentage.Text == "" || txtLeverage.Text == "" || txtBitfinexApiKey.Text == "" || txtBitfinexApiSecret.Text == ""
-                || txtBitfinexApiKey.Text == "" || txtBitfinexApiSecret.Text == "" || txtPoloniexApiKey.Text == "" || txtPoloniexApiSecret.Text == "" 
-                || txtKrakenApiKey.Text == "" || txtKrakenApiSecret.Text == "" || txtOneBrokerApiToken.Text == "" )
+                || txtBitfinexApiKey.Text == "" || txtBitfinexApiSecret.Text == "" || txtPoloniexApiKey.Text == "" || txtPoloniexApiSecret.Text == ""
+                || txtKrakenApiKey.Text == "" || txtKrakenApiSecret.Text == "" || txtOneBrokerApiToken.Text == "")
             {
                 return;
             }
@@ -176,7 +172,7 @@ namespace AlertTrader
             Properties.Settings.Default.Market = txtMarket.Text;
             Properties.Settings.Default.CapitalPercentageInEachOrder = decimal.Parse(txtCapitalPercentageInEachOrder.Text);
             Properties.Settings.Default.FixedAmmount = txtSettingFixedAmmount.Text;
-            Properties.Settings.Default.LimitSpreadPercentage =int.Parse(txtLimitSpreadPercentage.Text);
+            Properties.Settings.Default.LimitSpreadPercentage = int.Parse(txtLimitSpreadPercentage.Text);
             Properties.Settings.Default.Leverage = txtLeverage.Text;
             Properties.Settings.Default.BittrexApiKey = txtBittrexApiKey.Text;
             Properties.Settings.Default.BittrexApiSecret = txtBittrexApiSecret.Text;

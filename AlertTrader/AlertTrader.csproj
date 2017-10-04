@@ -117,7 +117,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="APIExchanges\APIExchange.cs" />
+    <Compile Include="APIExchanges\IAPIExchange.cs" />
     <Compile Include="APIExchanges\BitfinexExchange.cs" />
     <Compile Include="APIExchanges\BittrexExchange.cs" />
     <Compile Include="APIExchanges\KrakenExchange.cs" />
@@ -132,6 +132,7 @@
     <Compile Include="Classes\EmailChecker.cs" />
     <Compile Include="Classes\ExtensionAttribute.cs" />
     <Compile Include="Classes\Information.cs" />
+    <Compile Include="Classes\LookupData.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

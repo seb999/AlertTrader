@@ -4,6 +4,7 @@ using Jojatekok.OneBrokerAPI;
 using Jojatekok.OneBrokerAPI.JsonObjects;
 using Jojatekok.OneBrokerAPI.ClientTools;
 using System.Collections.Generic;
+using AlertTrader.IAPIExchanges;
 
 namespace AlertTrader.APIExchanges
 {
@@ -43,7 +44,7 @@ namespace AlertTrader.APIExchanges
                 decimal price = this.GetCurrentPrice(baseCurrency,market);
 
                 decimal ammountMargin;
-                if (Properties.Settings.Default.UsingFixedAmmount)
+                if (Properties.Settings.Default.UsingFixedAmount)
                 {
                     ammountMargin = decimal.Parse(Properties.Settings.Default.FixedAmmount.ToString());
                 }
@@ -76,7 +77,7 @@ namespace AlertTrader.APIExchanges
                 decimal price = this.GetCurrentPrice(baseCurrency,market);
 
                 decimal ammountMargin;
-                if (Properties.Settings.Default.UsingFixedAmmount)
+                if (Properties.Settings.Default.UsingFixedAmount)
                 {
                     ammountMargin = decimal.Parse(Properties.Settings.Default.FixedAmmount.ToString());
                 }

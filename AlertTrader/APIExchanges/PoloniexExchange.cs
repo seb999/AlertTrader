@@ -1,4 +1,5 @@
-﻿using Jojatekok.PoloniexAPI;
+﻿using AlertTrader.IAPIExchanges;
+using Jojatekok.PoloniexAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,7 +61,7 @@ namespace AlertTrader.APIExchanges
                 double price = Convert.ToDouble(this.GetCurrentPrice(baseCurrency,market));
 
                 double ammount;
-                if (Properties.Settings.Default.UsingFixedAmmount)
+                if (Properties.Settings.Default.UsingFixedAmount)
                 {
                     ammount = double.Parse(Properties.Settings.Default.FixedAmmount.ToString());
                 }
@@ -97,7 +98,7 @@ namespace AlertTrader.APIExchanges
                 double price = Convert.ToDouble(this.GetCurrentPrice(baseCurrency,market));
 
                 double ammount;
-                if (Properties.Settings.Default.UsingFixedAmmount)
+                if (Properties.Settings.Default.UsingFixedAmount)
                 {
                     ammount = double.Parse(Properties.Settings.Default.FixedAmmount.ToString());
                 }

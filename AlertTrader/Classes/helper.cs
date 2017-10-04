@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
 using AlertTrader.Classes;
+using static AlertTrader.Classes.LookupData;
 
 namespace AlertTrader.Misc
 {

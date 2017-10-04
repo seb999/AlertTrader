@@ -10,17 +10,19 @@ using AlertTrader.Misc;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
 using AlertTrader.Classes;
+using AlertTrader.IAPIExchanges;
+using static AlertTrader.Classes.LookupData;
 
 namespace AlertTrader.APIExchanges
 {
-    public class BittrexExchange : APIExchange
+    public class BittrexExchange : IAPIExchange
     {
         Exchange exchange;
         decimal totalFees = 0;
         decimal lastBuyPrice = 0;
         decimal totalProfit = 0;
 
-        public BittrexExchange(ObservableCollection<Information> list) : base(list)
+        public BittrexExchange()
         {
             exchange = new Exchange();
             exchange.Initialise(new ExchangeContext()
@@ -47,7 +49,7 @@ namespace AlertTrader.APIExchanges
                 price = (decimal)ticker["Last"];
 
                 decimal ammount;
-                if (Properties.Settings.Default.UsingFixedAmmount)
+                if (Properties.Settings.Default.UsingFixedAmount)
                 {
                     ammount = decimal.Parse(Properties.Settings.Default.FixedAmmount.ToString());
                 }
@@ -82,22 +84,22 @@ namespace AlertTrader.APIExchanges
 
                 if (order.GetType().Name != "CompletedOrder")
                 {
-                    helper.DisplayUserMessage(string.Format("Order not completed... something went wrong :/"), messageList, Brushes.DarkMagenta);
+                    helper.DisplayUserMessage(string.Format("Order not completed... something went wrong :/"), LookupData.MessageList, Brushes.DarkMagenta);
                     return 0;
                 }
                 else
                 {
-                    helper.DisplayUserMessage(string.Format("Limit BUY order executed on {0} id = {1}", market, order.OrderUuid), messageList, Brushes.Green);
-                    helper.DisplayUserMessage(string.Format("Market Price: {0}", price), messageList, Brushes.Green);
-                    helper.DisplayUserMessage(string.Format("Total Order Price: {0}", order.Price), messageList, Brushes.Green);
-                    helper.DisplayUserMessage(string.Format("Unit Price: {0}", order.PricePerUnit), messageList, Brushes.Green);
-                    helper.DisplayUserMessage(string.Format("Quantity: {0}", order.Quantity), messageList, Brushes.Green);
-                    helper.DisplayUserMessage(string.Format("Quantity remaining: {0}", order.QuantityRemaining), messageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Limit BUY order executed on {0} id = {1}", market, order.OrderUuid), LookupData.MessageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Market Price: {0}", price), LookupData.MessageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Total Order Price: {0}", order.Price), LookupData.MessageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Unit Price: {0}", order.PricePerUnit), LookupData.MessageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Quantity: {0}", order.Quantity), LookupData.MessageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Quantity remaining: {0}", order.QuantityRemaining), LookupData.MessageList, Brushes.Green);
 
                     decimal spread = 100 - Math.Abs((Math.Round((Decimal.Divide((order.Price - price), price) * 100), 4)));
 
-                    helper.DisplayUserMessage(string.Format("Spread: {0}%", spread), messageList, Brushes.White);
-                    helper.DisplayUserMessage(string.Format("Commission: {0}", order.Commission), messageList, Brushes.White);
+                    helper.DisplayUserMessage(string.Format("Spread: {0}%", spread), LookupData.MessageList, Brushes.White);
+                    helper.DisplayUserMessage(string.Format("Commission: {0}", order.Commission), LookupData.MessageList, Brushes.White);
 
                     //update price, to return real price per unit
                     price = order.PricePerUnit;
@@ -107,21 +109,21 @@ namespace AlertTrader.APIExchanges
             }
             catch (Exception ex)
             {
-                helper.DisplayUserMessage(string.Format("Error on Buy Order:"), messageList, Brushes.Red);
+                helper.DisplayUserMessage(string.Format("Error on Buy Order:"), LookupData.MessageList, Brushes.Red);
 
                 if (ex.Message.Contains("QUANTITY_NOT_PROVIDED"))
                 {
-                    helper.DisplayUserMessage(string.Format("Quantity/ammount of {0} not valid."), messageList, Brushes.Red);
+                    helper.DisplayUserMessage(string.Format("Quantity/ammount of {0} not valid."), LookupData.MessageList, Brushes.Red);
                 }
                 else if (ex.Message.Contains("APIKEY_INVALID"))
                 {
-                    helper.DisplayUserMessage(string.Format("API / KEY INVALID"), messageList, Brushes.Red);
+                    helper.DisplayUserMessage(string.Format("API / KEY INVALID"), LookupData.MessageList, Brushes.Red);
                 }
                 else
                 {
-                    helper.DisplayUserMessage(string.Format("ex.Message"), messageList, Brushes.Red);
-                    helper.DisplayUserMessage(ex.InnerException.ToString(), messageList, Brushes.Red);
-                    helper.DisplayUserMessage(ex.StackTrace.ToString(), messageList, Brushes.Red);
+                    helper.DisplayUserMessage(string.Format("ex.Message"), LookupData.MessageList, Brushes.Red);
+                    helper.DisplayUserMessage(ex.InnerException.ToString(), LookupData.MessageList, Brushes.Red);
+                    helper.DisplayUserMessage(ex.StackTrace.ToString(), LookupData.MessageList, Brushes.Red);
                 }
             }
             return price;
@@ -140,16 +142,16 @@ namespace AlertTrader.APIExchanges
 
                 decimal balance = this.GetBalance(market);
 
-                helper.DisplayUserMessage(string.Format("Balance: {0}", balance), messageList, Brushes.White);
+                helper.DisplayUserMessage(string.Format("Balance: {0}", balance), LookupData.MessageList, Brushes.White);
 
                 JObject ticker = exchange.GetTicker(market);
 
                 price = (decimal)ticker["Last"];
 
-                helper.DisplayUserMessage(string.Format("Price: {0}", price), messageList, Brushes.White);
+                helper.DisplayUserMessage(string.Format("Price: {0}", price), LookupData.MessageList, Brushes.White);
 
                 decimal ammount;
-                if (Properties.Settings.Default.UsingFixedAmmount)
+                if (Properties.Settings.Default.UsingFixedAmount)
                 {
                     ammount = decimal.Parse(Properties.Settings.Default.FixedAmmount.ToString());
                 }
@@ -186,29 +188,29 @@ namespace AlertTrader.APIExchanges
 
                 if (order.GetType().Name != "CompletedOrder")
                 {
-                    helper.DisplayUserMessage(string.Format("Order not completed... something went wrong :/"), messageList, Brushes.DarkMagenta);
+                    helper.DisplayUserMessage(string.Format("Order not completed... something went wrong :/"), LookupData.MessageList, Brushes.DarkMagenta);
                     return 0;
                 }
                 else
                 {
-                    helper.DisplayUserMessage(string.Format("Limit SELL order executed on {0} id = {1}", market, order.OrderUuid), messageList, Brushes.Green);
-                    helper.DisplayUserMessage(string.Format("Market Price: {0}", price), messageList, Brushes.Green);
-                    helper.DisplayUserMessage(string.Format("Total Order Price: {0}", order.Price), messageList, Brushes.Green);
-                    helper.DisplayUserMessage(string.Format("Unit Price: {0}", order.PricePerUnit), messageList, Brushes.Green);
-                    helper.DisplayUserMessage(string.Format("Quantity: {0}", order.Quantity), messageList, Brushes.Green);
-                    helper.DisplayUserMessage(string.Format("Quantity remaining: {0}", order.QuantityRemaining), messageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Limit SELL order executed on {0} id = {1}", market, order.OrderUuid), LookupData.MessageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Market Price: {0}", price), LookupData.MessageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Total Order Price: {0}", order.Price), LookupData.MessageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Unit Price: {0}", order.PricePerUnit), LookupData.MessageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Quantity: {0}", order.Quantity), LookupData.MessageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("Quantity remaining: {0}", order.QuantityRemaining), LookupData.MessageList, Brushes.Green);
 
                     decimal spread = 100 - Math.Abs((Math.Round((Decimal.Divide((order.Price - price), price) * 100), 4)));
 
-                    helper.DisplayUserMessage(string.Format("Spread: {0}%", spread), messageList, Brushes.White);
-                    helper.DisplayUserMessage(string.Format("Commission: {0}", order.Commission), messageList, Brushes.White);
+                    helper.DisplayUserMessage(string.Format("Spread: {0}%", spread), LookupData.MessageList, Brushes.White);
+                    helper.DisplayUserMessage(string.Format("Commission: {0}", order.Commission), LookupData.MessageList, Brushes.White);
 
                     //update price, to return real price per unit
                     price = order.PricePerUnit;
 
                     string profit = lastBuyPrice == 0 ? "---" : Math.Round(((Decimal.Divide(price, lastBuyPrice) - 1) * 100), 4).ToString();
 
-                    helper.DisplayUserMessage(string.Format("PROFIT: {0}", profit), messageList, Brushes.Green);
+                    helper.DisplayUserMessage(string.Format("PROFIT: {0}", profit), LookupData.MessageList, Brushes.Green);
 
                     totalProfit += Convert.ToDecimal(profit, CultureInfo.InvariantCulture);
                     totalFees += order.Commission;
@@ -217,9 +219,9 @@ namespace AlertTrader.APIExchanges
             }
             catch (Exception ex)
             {
-                helper.DisplayUserMessage(string.Format("Error on Sell Order: [0]", ex.Message), messageList, Brushes.Red);
-                helper.DisplayUserMessage(ex.InnerException.ToString(), messageList, Brushes.Red);
-                helper.DisplayUserMessage(ex.StackTrace.ToString(), messageList, Brushes.Red);
+                helper.DisplayUserMessage(string.Format("Error on Sell Order: [0]", ex.Message), LookupData.MessageList, Brushes.Red);
+                helper.DisplayUserMessage(ex.InnerException.ToString(), LookupData.MessageList, Brushes.Red);
+                helper.DisplayUserMessage(ex.StackTrace.ToString(), LookupData.MessageList, Brushes.Red);
             }
             return price;
         }

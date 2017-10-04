@@ -6,10 +6,58 @@
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="email" Type="System.String" Scope="User">
-      <Value Profile="(Default)">toto@titi.com</Value>
+      <Value Profile="(Default)">N/A</Value>
     </Setting>
     <Setting Name="password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Bonjour</Value>
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="BaseCurrency" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="Market" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="UsingFixedAmount" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FixedAmmount" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="CapitalPercentageInEachOrder" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="LimitSpreadPercentage" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Leverage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="BitfinexApiKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="BitfinexApiSecret" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="BittrexApiKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="BittrexApiSecret" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="PoloniexApiKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="PoloniexApiSecret" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="KrakenApiKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="KrakenApiSecret" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
+    </Setting>
+    <Setting Name="OneBrokerApiToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N/A</Value>
     </Setting>
   </Settings>
 </SettingsFile>

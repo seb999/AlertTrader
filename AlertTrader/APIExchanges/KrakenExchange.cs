@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using KrakenClient;
 using System.Threading;
 using System.Globalization;
+using AlertTrader.IAPIExchanges;
 
 namespace AlertTrader.APIExchanges
 {
@@ -53,7 +50,7 @@ namespace AlertTrader.APIExchanges
                 //Console.WriteLine("Price: " + price);
 
                 decimal ammount;
-                if (Properties.Settings.Default.UsingFixedAmmount)
+                if (Properties.Settings.Default.UsingFixedAmount)
                 {
                     ammount = decimal.Parse(Properties.Settings.Default.FixedAmmount.ToString());
                 }
@@ -152,7 +149,7 @@ namespace AlertTrader.APIExchanges
                 //Console.WriteLine("Price: " + price);
 
                 decimal ammount;
-                if (Properties.Settings.Default.UsingFixedAmmount)
+                if (Properties.Settings.Default.UsingFixedAmount)
                 {
                     ammount = decimal.Parse(Properties.Settings.Default.FixedAmmount.ToString());
                 }

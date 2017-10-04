@@ -50,19 +50,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/nzuhWUDVoRbHZ9Ctvzo+NGXmSuRkSwIDZZdc5sSpQE=</dsig:DigestValue>
+        <dsig:DigestValue>zRhF1nt10f2ZOHqsCa43lisBS4TZHLZ48Ryyqs/cPO8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AlertTrader.exe" size="595384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AlertTrader.exe" size="596920">
       <assemblyIdentity name="AlertTrader" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>g6ryHq3Xrdj5MVQcafvwqZAqOMj/Sk9X0ZBFXd7SRYc=</dsig:DigestValue>
+        <dsig:DigestValue>2PD4WTFVmrcWN0M6LNr3CSjX3QQpgkxssPb806HYK7w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -134,7 +134,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FxAa6LP4GxJ9is8pNb3kuRwO+iTwQFlb7f1lNrcjWCY=</dsig:DigestValue>
+        <dsig:DigestValue>/4JU/FYavjJSTufkkIrD5cNz1xiZn5pyj+3tvoOan8M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -194,7 +194,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>A8FCzffChHVS4QRDv6sW/3pyT/iLYh3ygYFwhOrzn10=</dsig:DigestValue>
+        <dsig:DigestValue>gCl0QHHz0sxcXazfGBmjP9v/alJKcfMSbEsm54Z8Zrs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -222,13 +222,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="AlertTrader.exe.config" size="4028">
+  <file name="AlertTrader.exe.config" size="3925">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>NR3aOmaHJnFvwG4IwVm8I1mXagibCdkeFMjbUxaOjoA=</dsig:DigestValue>
+      <dsig:DigestValue>0WF6hGe3m3DcLmD0OHK3AyRwEDKKPVQOs2gNNF0nsa4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="bitcoin.ico" size="179683">

@@ -73,3 +73,17 @@ C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader.application
 C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader.exe
 C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\obj\Debug\AlertTrader.pdb
 C:\ALERT-TRADER-GITHUB\AlertTrader\AlertTrader\bin\Debug\Jayrock.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\1BrokerApi.Net.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\BitfinexApi.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Jayrock.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Jayrock.Json.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\KrakenClient.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\PoloniexApi.Net.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\RateGate.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\1BrokerApi.Net.pdb
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\1BrokerApi.Net.dll.config
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\KrakenClient.pdb
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\PoloniexApi.Net.pdb
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\PoloniexApi.Net.dll.config
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\BitfinexApi.pdb
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\RateGate.xml

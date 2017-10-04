@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using BitfinexApi;
 using System.Threading;
 using System.Globalization;
+using System.Collections.ObjectModel;
+using AlertTrader.Classes;
+using AlertTrader.IAPIExchanges;
 
 namespace AlertTrader.APIExchanges
 {
@@ -47,7 +50,7 @@ namespace AlertTrader.APIExchanges
                 price = this.GetCurrentPrice(baseCurrency,market);
 
                 decimal ammount;
-                if (Properties.Settings.Default.UsingFixedAmmount)
+                if (Properties.Settings.Default.UsingFixedAmount)
                 {
                     ammount = decimal.Parse(Properties.Settings.Default.FixedAmmount.ToString());
                 }
@@ -153,7 +156,7 @@ namespace AlertTrader.APIExchanges
                 //Console.WriteLine("Price: " + price);
 
                 decimal ammount;
-                if (Properties.Settings.Default.UsingFixedAmmount)
+                if (Properties.Settings.Default.UsingFixedAmount)
                 {
                     ammount = decimal.Parse(Properties.Settings.Default.FixedAmmount.ToString());
                 }
