@@ -9,6 +9,7 @@ using AlertTrader.Misc;
 using AlertTrader.APIExchanges;
 using static AlertTrader.Classes.LookupData;
 using AlertTrader.IAPIExchanges;
+using Serilog;
 
 namespace AlertTrader
 {
@@ -49,13 +50,17 @@ namespace AlertTrader
         public MainWindow()
         {
             InitializeComponent();
+            Log.Logger = helper.OpenLogger();
+            Log.Information("AlertTrader started");
         }
 
         private void StartTimer_Click(object sender, RoutedEventArgs e)
         {
             gridBudgetList.ItemsSource = budgetList;
-            lbMessageList.ItemsSource = LookupData.MessageList;//messageList;
+            lbMessageList.ItemsSource = LookupData.MessageList;
             SetTimer();
+
+            Log.Information("timer started");
         }
         
         private void StopTimer_Click(object sender, RoutedEventArgs e)
@@ -130,6 +135,7 @@ namespace AlertTrader
                 //----------------------------------------------------------------------
 
                 budgetList.Add(new Budget() { Date = DateTime.Now, TotalProfit = totalProfit, TotalPayedFee = totalFees });
+                Log.Warning("TotalProfit : " + totalProfit + " TotalPayedFee : " + totalFees);
                 //after 1 days we purge
                 if (budgetList.Count > 60 * 24)
                 {

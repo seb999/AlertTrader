@@ -87,3 +87,13 @@ C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\PoloniexApi.Net.p
 C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\PoloniexApi.Net.dll.config
 C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\BitfinexApi.pdb
 C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\RateGate.xml
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Serilog.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Serilog.Sinks.Console.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Serilog.Sinks.File.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Serilog.Sinks.Literate.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Serilog.xml
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Serilog.Sinks.Console.xml
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Serilog.Sinks.File.xml
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Serilog.Sinks.Literate.xml
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Serilog.Sinks.RollingFile.dll
+C:\Users\sdubos\source\repos\AlertTrader\AlertTrader\bin\Debug\Serilog.Sinks.RollingFile.xml

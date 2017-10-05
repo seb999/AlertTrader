@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Collections.ObjectModel;
 using AlertTrader.Classes;
 using static AlertTrader.Classes.LookupData;
+using Serilog;
 
 namespace AlertTrader.Misc
 {
@@ -28,6 +29,17 @@ namespace AlertTrader.Misc
                 DisplayInfo = message,
                 DisplayColor = color
             });
+
+            Log.Information(message);
+        }
+
+        internal static Serilog.Core.Logger OpenLogger()
+        {
+            return new LoggerConfiguration()
+               .MinimumLevel.Debug()
+               .WriteTo.LiterateConsole()
+               .WriteTo.RollingFile("logs\\alertTrader-{Date}.txt")
+               .CreateLogger();
         }
     }
 }

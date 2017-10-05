@@ -1,0 +1,4 @@
+2017-10-05 11:49:42.732 +02:00 [Information] Hello, world!
+2017-10-05 11:50:23.826 +02:00 [Information] Hello, world!
+2017-10-05 12:19:14.455 +02:00 [Information] Hello, world!
+2017-10-05 12:19:16.727 +02:00 [Information] timer started
